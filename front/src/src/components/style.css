@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+*{
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+    color: #1A2942;
+}
+body {
+  margin: 0px;
+}
+.barStyle {
+  display: flex;
+  justify-content: space-around;
+  background: #ACC4CC;
+}
+ul {
+  padding: 0px;
+  display: flex;
+  justify-content: space-around;
+}
+li {
+  display: inline;
+  padding-right: 10px;
+}
+.loginimg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+.leftbar {
+  width: 33%;
+}
+.logoBar {
+  text-align: center;
+  width: 33%;
+}
+.barStyle2 {
+  width: 33%;
+  display: flex;
+  align-items: center;
+}

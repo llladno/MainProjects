@@ -1,0 +1,10 @@
+.select{
+    height: 400px;
+    background: url(./img/image\ 7.png);
+    background-size: cover;
+    filter: brightness(40%);
+    display: flex;
+    padding: 0px 300px 0px 300px;
+    align-items: center;
+    justify-content: space-around;
+}
