@@ -3,6 +3,7 @@ import Bar from './Bar'
 import head from "./img/image 7.png"
 import "./shop.css"
 import candle from "./img/fluent-emoji-high-contrast_candle.png"
+import CandleShop from './shop/CandleShop'
 
 
 export default class Shop extends Component {
@@ -29,6 +30,7 @@ export default class Shop extends Component {
                     </div>
                 </div>
                 <h1>Shop</h1>
+                <CandleShop></CandleShop>
             </div>
         )
     }

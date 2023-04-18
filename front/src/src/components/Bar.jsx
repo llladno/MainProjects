@@ -10,7 +10,7 @@ const Bar = () => {
             <div className='leftbar'>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href='/Shop'>Store</a></li>
+                    <li><a href='/shop/candle'>Store</a></li>
                     <li><a>Address</a></li>
                 </ul>
             </div>

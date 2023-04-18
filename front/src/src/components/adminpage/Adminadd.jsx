@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Adminhead from './Adminhead';
 import axios from "axios"
+import addUser from './AdminUserAdd';
+import addProduct from './AdminProductAdd';
 
 
 const Adminadd = () => {
@@ -9,7 +11,9 @@ const Adminadd = () => {
     window.addEventListener('load', function () {
         elem = document.getElementById("elem")
     });
+    let eventch
     function change(event) {
+        eventch = event.target.value
         if (event.target.value == "user") {
             elem.innerHTML = `
             <p>login:</p><input class='input1'></input>
@@ -19,10 +23,10 @@ const Adminadd = () => {
         }
         else if (event.target.value == "product") {
             elem.innerHTML = `
-            <p>Название:</p><input></input>
-            <p>Описание:</p><input></input>
-            <p>Цена:</p><input></input>
-            <p>Категория:</p><input></input>
+            <p>Название:</p><input class='input1'></input>
+            <p>Описание:</p><input class='input1'></input>
+            <p>Цена:</p><input class='input1'></input>
+            <p>Категория:</p><input class='input1'></input>
             `
         }
         else if (event.target.value == "shop") {
@@ -38,20 +42,10 @@ const Adminadd = () => {
         addbtn.onclick = (event) => {
             let input1 = document.getElementsByClassName("input1")
             data.push(input1[0].value, input1[1].value, input1[2].value, input1[3].value)
-            axios({
-                method: 'post',
-                url: 'http://localhost:3005/api/post',
-                data: [{
-                    email:  data[2],
-                    passwd:  data[3],
-                    name:  data[1],
-                    login: data[0],
-                }]
-            }).then(response => {
-                console.log(response)
-            }).catch(err => {
-                console.log(err)
-            });
+            console.log(data)
+            if (eventch == "user") addUser(data)
+            else if (eventch == "product") addProduct(data)
+            data.length = 0
         }
     }
     return (

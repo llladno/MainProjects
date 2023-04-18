@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import Bar from "../Bar";
 
 
 
@@ -20,8 +21,16 @@ const UserLogin = () => {
         }).then(response => {
             console.log(response.data)
             if (response.data == "ok") {
+                window.location = "/user"
+                sessionStorage.setItem("email", `${email.value}`)
+                sessionStorage.setItem("passwd", `${passwd.value}`)
                 console.log(response)
             }
+            else if (response.data == "notlogin") {
+                let logindiv = document.getElementsByClassName("login")[0]
+                logindiv.innerHTML = `Неправильный логин или пароль`
+            }
+
             a = 1
             console.log(a)
         })
@@ -33,14 +42,19 @@ const UserLogin = () => {
 
     return (
         <div>
+            <Bar></Bar>
             <div>
-                <h1>Login</h1>
-                email
-                <input id="email"></input>
-                Passwd
-                <input id="passwd"></input>
-                <button onClick={sendlogin}>Letsgo</button>
-                { }
+                <div className="login">
+                </div>
+                <div >
+                    <h1>Login</h1>
+                    email
+                    <input id="email"></input>
+                    Passwd
+                    <input id="passwd"></input>
+                    <button onClick={sendlogin}>Letsgo</button>
+                    </div>
+
             </div>
         </div>
     )

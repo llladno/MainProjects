@@ -3,12 +3,17 @@ import axios from "axios"
 import Adminhead from "../Adminhead";
 
 const Users = () => {
+    function refresh() {
+        window.location.reload()
+    }
     const place = "users"
     const [data1, setData1] = useState("");
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
         fetch("http://localhost:3005/api/data/users")
             .then(res => res.json())
             .then(data => setData1(data.res))
+            setLoading(true)
     }, [])
     let data2 = data1
     return (
@@ -24,7 +29,7 @@ const Users = () => {
                         <th>Логин</th>
                     </tr>
                 </thead>
-                <tbody>{Array.from(data2).map((elem) => (
+                <tbody>{loading ? Array.from(data2).map((elem) => (
                     <tr>
                         <td>
                             {elem.idUser}
@@ -43,7 +48,11 @@ const Users = () => {
                         </td>
                     </tr>
                 )
-                )}</tbody></table>
+                )
+            : (<tr><td>Loading...</td></tr>)}</tbody></table>
+            <div>
+                <button onClick={refresh}>refresh</button>
+            </div>
         </div>
     )
 }

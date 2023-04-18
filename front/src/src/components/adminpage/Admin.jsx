@@ -21,7 +21,9 @@ const Admin = () => {
             console.log("eeee")
         }
         console.log(event.target.textContent)
-    }
+    }  
+    const data = sessionStorage.getItem("first")
+    console.log(data)
 
     return (
         <div>

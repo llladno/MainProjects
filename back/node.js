@@ -10,6 +10,12 @@ const postLogin = require("./login")
 const app = express()
 app.use(cors())
 app.use(bodyParser.json());
+const _dirname = path.resolve()
+
+
+
+
+console.log("Папка",_dirname)
 
 
 const connection = mysql2.createConnection({
@@ -35,6 +41,14 @@ app.listen(3005,()=>{
 app.get("/api/data/users",(req,res)=>{
     connection.query('SELECT * FROM user',(err,res)=>{
         if(err) console.log("err")
+        data = {res}
+    })
+    res.json(data)
+})
+
+app.get("/api/data/shop/candle",(req,res)=>{
+    connection.query('SELECT * FROM product',(err,res)=>{
+        if(err) console.log("err")
         console.log(res)
         console.log("Success")
         data = {res}
@@ -56,9 +70,12 @@ app.post("/auth/login", (req,res)=>{
         console.log(req.body[0].email)
         console.log(data.respon[0].email)
         for(let b = 0; b < data.respon.length ;b++){
-            if(req.body[0].email == data.respon[b].email){
+            if(req.body[0].email == data.respon[b].email && req.body[0].passwd == data.respon[b].passwd){
                 console.log("Это он",data.respon[b].idUser ,req.body[0].email, data.respon[b].email)
                 ok = "ok"
+            }
+            else {
+                ok = "notlogin"
             }
         }
         res.send(ok)
@@ -66,6 +83,15 @@ app.post("/auth/login", (req,res)=>{
     
 })
 
+app.get("/api/photos",(req,res)=>{
+    console.log("suu")
+    connection.query('SELECT * FROM images',(err,respon)=>{
+        if(err) console.log("err")
+        console.log(respon)
+        console.log("Success")
+        data = {res}
+    })
+})
 
 app.get("/api/data/products",(req,res)=>{
     connection.query('SELECT * FROM product',(err,res)=>{
@@ -79,13 +105,33 @@ app.get("/api/data/products",(req,res)=>{
     console.log("your data")
 })
 
-app.post("/api/post", (req, res)=>{
+app.get("/api/photo", (req,res)=>{
+    console.log("Ok")
+    
+    res.sendFile(path.join(_dirname,"img","3.jpg"))
+})
+
+app.post(`/api/addUser`, (req, res)=>{
     console.log(req.body)
     console.log(req.body[0].login)
      connection.query(`INSERT INTO user (email, passwd, name, login) VALUES ("${req.body[0].email}", 
      "${req.body[0].passwd}",
      "${req.body[0].name}", 
      "${req.body[0].login}")`
+     ,(err,respon)=>{
+     if(err) console.log(err)
+     console.log(respon)
+ })
+    res.send("ok")
+})
+
+app.post(`/api/addProduct`, (req, res)=>{
+    console.log(req.body)
+    console.log(req.body[0].login)
+     connection.query(`INSERT INTO product (title, descript, price, category) VALUES ("${req.body[0].title}", 
+     "${req.body[0].descript}",
+     "${+req.body[0].price}", 
+     "${req.body[0].category}")`
      ,(err,respon)=>{
      if(err) console.log(err)
      console.log(respon)

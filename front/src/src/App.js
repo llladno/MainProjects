@@ -8,6 +8,7 @@ import Users from "./components/adminpage/pages/Users";
 import Adminadd from "./components/adminpage/Adminadd";
 import Products from "./components/adminpage/pages/Products";
 import UserLogin from "./components/user/UserLogin";
+import Userhome from "./components/user/Userhome";
 
 function App() {
 
@@ -18,12 +19,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="bar" element={<Bar/>}/>
-        <Route path="Shop" element={<Shop/>}/>
+        <Route path="shop/candle" element={<Shop/>}/>
         <Route path="admin" element={<Admin/>}/>
         <Route path="admin/users" element={<Users/>}/>
         <Route path="admin/products" element={<Products></Products>}/>
         <Route path="admin/add" element={<Adminadd></Adminadd>}/>
         <Route path="/auth/login" element={<UserLogin></UserLogin>}/>
+        <Route path="/user" element={<Userhome></Userhome>}></Route>
+        <Route path="shop/candle" element={<Shop/>}/>
       </Routes>
     </div>
   );
