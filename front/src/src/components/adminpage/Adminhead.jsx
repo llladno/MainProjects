@@ -10,7 +10,9 @@ const Adminhead = (props) => {
     <a href="/admin/products"><button>Product</button></a>
     <a href="/admin/users"><button>Order</button></a>
     <a href="/admin/users"><button>Shop</button></a>
-    <a href="/admin/add"><button>Add</button></a></div>
+    <a href="/admin/add"><button>Add</button></a>
+    <a href="/admin/change"><button>Change</button></a>
+    </div>
     </div>
     )
 }

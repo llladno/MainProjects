@@ -73,8 +73,9 @@ app.post("/auth/login", (req,res)=>{
             if(req.body[0].email == data.respon[b].email && req.body[0].passwd == data.respon[b].passwd){
                 console.log("Это он",data.respon[b].idUser ,req.body[0].email, data.respon[b].email)
                 ok = "ok"
+                 break
             }
-            else {
+            else if (req.body[0].email != data.respon[b].email || req.body[0].passwd != data.respon[b].passwd){
                 ok = "notlogin"
             }
         }
@@ -124,6 +125,33 @@ app.post(`/api/addUser`, (req, res)=>{
  })
     res.send("ok")
 })
+
+app.post(`/api/changeUser`, (req, res)=>{
+    console.log(req.body)
+    console.log(req.body[0].login)
+     connection.query(`UPDATE user SET email="${req.body[0].email}", 
+     passwd="${req.body[0].passwd}", 
+     name="${req.body[0].name}", login="${req.body[0].login}"
+     WHERE idUser = ${+req.body[0].idUser};`
+     ,(err,respon)=>{
+     if(err) console.log(err)
+     console.log(respon)
+ })
+    res.send("ok")
+})
+
+app.post(`/api/deleteUser`, (req, res)=>{
+    console.log(req.body)
+    console.log(req.body[0].login)
+     connection.query(`DELETE FROM user 
+     WHERE idUser=${+req.body[0].idUser};`
+     ,(err,respon)=>{
+     if(err) console.log(err)
+     console.log(respon)
+ })
+    res.send("ok")
+})
+
 
 app.post(`/api/addProduct`, (req, res)=>{
     console.log(req.body)
