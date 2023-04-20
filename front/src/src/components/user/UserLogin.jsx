@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import Bar from "../Bar";
+import "./loginStyle.css"
 
 
 
@@ -30,7 +31,6 @@ const UserLogin = () => {
                 let logindiv = document.getElementsByClassName("login")[0]
                 logindiv.innerHTML = `Неправильный логин или пароль`
             }
-
             a = 1
             console.log(a)
         })
@@ -43,18 +43,27 @@ const UserLogin = () => {
     return (
         <div>
             <Bar></Bar>
-            <div>
+            <div className="container">
                 <div className="login">
                 </div>
-                <div >
-                    <h1>Login</h1>
-                    email
-                    <input id="email"></input>
-                    Passwd
-                    <input id="passwd"></input>
-                    <button onClick={sendlogin}>Letsgo</button>
+                <div className="loginplace">
+                    <div className="styleLogin">
+                        <h1 style={{ textAlign: "center" }}>Login</h1>
+                        <div>
+                            <p>Email</p>
+                            <input id="email"></input>
+                        </div>
+                        <div>
+                            <p>Пароль</p>
+                            <input id="passwd"></input>
+                        </div>
+                        <div className="btnStyle">
+                            <button onClick={sendlogin}>Войти</button><div></div>
+                            <a href="/user/register"><button>Зарегистрироваться</button></a>
+                        </div>
+                        <a>Забыли пароль?</a>
                     </div>
-
+                </div>
             </div>
         </div>
     )

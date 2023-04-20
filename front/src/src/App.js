@@ -10,6 +10,7 @@ import Products from "./components/adminpage/pages/Products";
 import UserLogin from "./components/user/UserLogin";
 import Userhome from "./components/user/Userhome";
 import AdminChange from "./components/adminpage/change/AdminChange";
+import UserRegister from "./components/user/UserRegister";
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
         <Route path="/auth/login" element={<UserLogin></UserLogin>}/>
         <Route path="/user" element={<Userhome></Userhome>}></Route>
         <Route path="shop/candle" element={<Shop/>}/>
-    
+        <Route path="/user/register" element={<UserRegister></UserRegister>}/>
       </Routes>
     </div>
   );

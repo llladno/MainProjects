@@ -4,8 +4,6 @@ import React from "react"
 
 
 const addUser = (props) => {
-    console.log("suuuuuu")
-    console.log(props)
     axios({
         method: 'post',
         url: 'http://localhost:3005/api/addUser',

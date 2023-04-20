@@ -3,6 +3,7 @@
     font-family: 'Outfit', sans-serif;
     font-size: 20px;
 }
+
 a{
     text-decoration: none;
     color: #1A2942;
@@ -11,7 +12,9 @@ body {
   margin: 0px;
 }
 .barStyle {
+  height: 70px;
   display: flex;
+  align-items: center;
   justify-content: space-around;
   background: #ACC4CC;
 }
