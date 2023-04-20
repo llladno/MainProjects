@@ -31,6 +31,9 @@ const UserLogin = () => {
                 let logindiv = document.getElementsByClassName("login")[0]
                 logindiv.innerHTML = `Неправильный логин или пароль`
             }
+            else if (response.data = "admin"){
+                window.location = "/admin"
+            }
             a = 1
             console.log(a)
         })
@@ -50,7 +53,7 @@ const UserLogin = () => {
                     <div className="styleLogin">
                         <h1 style={{ textAlign: "center" }}>Login</h1>
                         <div>
-                            <p>Email</p>
+                            <p>Email/Login</p>
                             <input id="email"></input>
                         </div>
                         <div>

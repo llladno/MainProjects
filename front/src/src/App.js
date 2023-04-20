@@ -11,6 +11,7 @@ import UserLogin from "./components/user/UserLogin";
 import Userhome from "./components/user/Userhome";
 import AdminChange from "./components/adminpage/change/AdminChange";
 import UserRegister from "./components/user/UserRegister";
+import Order from "./components/adminpage/pages/Order";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/user" element={<Userhome></Userhome>}></Route>
         <Route path="shop/candle" element={<Shop/>}/>
         <Route path="/user/register" element={<UserRegister></UserRegister>}/>
+        <Route path="admin/order" element={<Order></Order>}/>
       </Routes>
     </div>
   );

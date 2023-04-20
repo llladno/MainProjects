@@ -1,12 +1,19 @@
 table{
-    border-collapse: collapse;
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
 th{
     padding: 5px 50px 5px 50px;
 }
-td, th{
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    border-color: rgb(0, 0, 0);
+
+th:not(:last-child),
+td:not(:last-child){
+border-right: 1px solid #000;
+}
+td,th{
+    text-align: center;
+    border-bottom: 1px solid #000;
 }
