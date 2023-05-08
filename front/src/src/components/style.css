@@ -11,13 +11,7 @@ a{
 body {
   margin: 0px;
 }
-.barStyle {
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background: #ACC4CC;
-}
+
 ul {
   padding: 0px;
   display: flex;
@@ -41,8 +35,15 @@ li {
   text-align: center;
   width: 33%;
 }
-.barStyle2 {
+.barStyle2{
   width: 33%;
   display: flex;
   align-items: center;
+}
+
+.barStyle3{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background: #ACC4CC;
 }

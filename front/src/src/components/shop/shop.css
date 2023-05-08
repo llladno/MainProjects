@@ -1,8 +1,24 @@
 .grid-body{
     display: grid;
-    grid-template-columns: 200px 200px 200px;
+    width: 100%;
+    grid-template-columns: 33% 33% 34%;
 
 }
+.container{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
 .grid-item{
-    
+    display: flex;
+    justify-content: center;
+}
+.card{
+    margin: 20px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    background-color: aliceblue;
+}
+img{
+    object-fit: cover;
 }

@@ -6,8 +6,6 @@ import Adminhead from "./Adminhead";
 
 const Admin = () => {
     let component
-    let suu = "suu"
-    let user = "Users"
     function page (event) {
         console.log("suu")
         const divelem = document.getElementById("pages")

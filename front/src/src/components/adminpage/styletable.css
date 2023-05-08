@@ -8,3 +8,11 @@
 .column1{
     background-color: rgb(235, 235, 235);
 }
+
+.descript{
+    max-width: 250px;
+    max-height: 150px;
+    overflow-wrap:break-word;
+    overflow-y: hidden
+   
+}

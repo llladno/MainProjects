@@ -3,7 +3,10 @@ table{
     border-collapse: separate;
     border-radius: 10px;
     border: 1px solid black;
+    overflow:hidden;
 }
+
+
 
 th{
     padding: 5px 50px 5px 50px;
@@ -15,5 +18,57 @@ border-right: 1px solid #000;
 }
 td,th{
     text-align: center;
-    border-bottom: 1px solid #000;
+}
+
+th{
+    color: #fff;
+    background-color: #3b3b3b;
+}
+
+th:last-child{
+    padding: 10px;
+}
+
+
+.barStyle{
+    padding-left: 20px;
+    position:fixed;
+    width: 10%;
+    height: 100%;
+    background: #ACC4CC;
+  }
+
+.btnAdmin{
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    height: 40px;
+}
+.btnAdmin button{
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    height: 40px;
+}
+.btnAdmin img{
+    padding-top: 7px;
+    padding-right: 10px;
+    width: 25px;
+    height: 25px;
+}
+.tablecenter{
+    display: flex;
+    justify-content: center;
+    padding-left: 10%;
+    width: 90%;
+}
+a{
+    display: flex;
+}
+
+.changecenter{
+    display: flex;
+    justify-content: center;
+    padding-left: 10%;
+    width: 90%;
 }

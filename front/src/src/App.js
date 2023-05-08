@@ -12,6 +12,8 @@ import Userhome from "./components/user/Userhome";
 import AdminChange from "./components/adminpage/change/AdminChange";
 import UserRegister from "./components/user/UserRegister";
 import Order from "./components/adminpage/pages/Order";
+import Basket from "./components/basket/Basket";
+import OrderDeliv from "./components/adminpage/pages/OrderDeliv";
 
 function App() {
 
@@ -33,6 +35,8 @@ function App() {
         <Route path="shop/candle" element={<Shop/>}/>
         <Route path="/user/register" element={<UserRegister></UserRegister>}/>
         <Route path="admin/order" element={<Order></Order>}/>
+        <Route path="/basket" element={<Basket></Basket>}/>
+        <Route path="admin/deliv" element={<OrderDeliv></OrderDeliv>}/>
       </Routes>
     </div>
   );

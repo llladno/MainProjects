@@ -24,43 +24,48 @@ const Adminadd = () => {
         else if (event.target.value == "product") {
             elem.innerHTML = `
             <p>Название:</p><input class='input1'></input>
-            <p>Описание:</p><input class='input1'></input>
+            <p>Описание:</p><textarea class='input1'></textarea>
             <p>Цена:</p><input class='input1'></input>
             <p>Категория:</p><input class='input1'></input>
+            <p>ID photo:</p><input class='input1'></input>
             `
         }
-        else if (event.target.value == "shop") {
+        else if (event.target.value == "deliv") {
             elem.innerHTML = `
-            <p>login:</p><input></input>
-            <p>email:</p><input></input>
-            <p>password:</p><input></input>
-            <p>name:</p><input></input>`
+            <p>Дата заказа (03.03.2023):</p><input  class='input1'></input>
+            <p>Дата доставки (03.03.2023):</p><input  class='input1'></input>
+            <p>id магазина:</p><input  class='input1'></input>
+            <p>id покупателя:</p><input  class='input1'></input>`
         }
         elem.innerHTML += "<button id='addbtn'>Отправить</button>"
         
         let addbtn = document.getElementById("addbtn")
         addbtn.onclick = (event) => {
             let input1 = document.getElementsByClassName("input1")
-            data.push(input1[0].value, input1[1].value, input1[2].value, input1[3].value)
-            console.log(data)
+            for(let n = 0; n < input1.length; n++){
+                data.push(input1[n].value)
+            }
             if (eventch == "user") addUser(data)
             else if (eventch == "product") addProduct(data)
+            else if (eventch == "deliv") addProduct(data)
             data.length = 0
         }
     }
     return (
         <div>
             <Adminhead></Adminhead>
-            <div>
+            <div className='changecenter'>
+                <div>
                 <select onChange={change}>
                     <option disabled selected ></option>
                     <option value="user">User</option>
                     <option value="product">Product</option>
-                    <option value="shop">Shop</option>
+                    <option value="deliv">Shop</option>
                 </select>
                 <div id='elem'>
                     <div>Введите информацию о</div>
                 </div>
+            </div>
             </div>
         </div>
 
