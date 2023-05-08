@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: sql_website
+-- Host: localhost    Database: sql_website
 -- ------------------------------------------------------
--- Server version	8.0.32
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,8 +28,9 @@ CREATE TABLE `product` (
   `descript` varchar(1023) NOT NULL,
   `price` int NOT NULL,
   `category` varchar(45) NOT NULL,
+  `photoid` int NOT NULL,
   PRIMARY KEY (`idProduct`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +39,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (3,'Свеча 3','Очень крутая свеча3',1000,'Восковая'),(13,'Свеча 3','Очень крутая свеча3',1000,'Восковая'),(16,'Свеча 2','Очень крутая свеча',1000,'Соевая'),(17,'Свеча 3','Очень крутая свеча3',1000,'Восковая'),(18,'Свеча 2','Очень крутая свеча',1000,'Соевая'),(19,'Свеча 3','Очень крутая свеча3',1000,'Восковая'),(20,'Свеча 2','Очень крутая свеча',1000,'Соевая'),(21,'Свеча 3','Очень крутая свеча3',1000,'Восковая'),(22,'Свеча 1','бла бла',1000,'Восковая'),(23,'Свеча 4','Крутая',2000,'Восковая');
+INSERT INTO `product` VALUES (24,'Свеча 22','уууу',1500,'Восковая',1),(30,'Свеча 3','выфвфывыфвфы',500,'Соевая',2);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-20 17:06:46
+-- Dump completed on 2023-05-08 20:31:20

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: sql_website
+-- Host: localhost    Database: sql_website
 -- ------------------------------------------------------
--- Server version	8.0.32
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -24,13 +24,16 @@ DROP TABLE IF EXISTS `orderdeliv`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orderdeliv` (
   `idOrder` int NOT NULL AUTO_INCREMENT,
-  `dateOrder` datetime NOT NULL,
-  `dateDeliv` datetime NOT NULL,
+  `dateOrder` varchar(100) NOT NULL,
+  `dateDeliv` varchar(100) NOT NULL,
   `idShop` int DEFAULT NULL,
+  `CustomerId` int NOT NULL,
   PRIMARY KEY (`idOrder`),
   KEY `idShop` (`idShop`),
-  CONSTRAINT `orderdeliv_ibfk_1` FOREIGN KEY (`idShop`) REFERENCES `shop` (`shop_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `CustomerId` (`CustomerId`),
+  CONSTRAINT `orderdeliv_ibfk_1` FOREIGN KEY (`idShop`) REFERENCES `shop` (`shop_id`),
+  CONSTRAINT `orderdeliv_ibfk_2` FOREIGN KEY (`CustomerId`) REFERENCES `user` (`idUser`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +42,7 @@ CREATE TABLE `orderdeliv` (
 
 LOCK TABLES `orderdeliv` WRITE;
 /*!40000 ALTER TABLE `orderdeliv` DISABLE KEYS */;
+INSERT INTO `orderdeliv` VALUES (2,'2002-05-20 23:00:00','2005-05-20 23:00:00',1,60),(3,'2002-05-20 23:00:00','2005-05-20 23:00:00',1,60),(4,'2002-05-20 23:00:00','2005-05-20 23:00:00',1,60),(5,'2002-05-20 23:00:00','2005-05-20 23:00:00',1,60),(6,'02.05.2023','05.05.2023',1,60),(7,'03.03.2023','04.03.2023',1,1),(8,'03.05.2023','06.05.2023',1,60),(9,'03.05.2023','06.05.2023',1,60),(10,'04.05.2023','07.05.2023',1,60);
 /*!40000 ALTER TABLE `orderdeliv` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-20 17:06:47
+-- Dump completed on 2023-05-08 20:31:20
