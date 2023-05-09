@@ -14,11 +14,12 @@ app.use(bodyParser.json());
 const _dirname = path.resolve();
 
 const connection = mysql2.createConnection({
-  host: "localhost",
-  user: "root",
+  host: "192.168.56.1",
+  user: "a2",
   database: "sql_website",
   password: "qwerty12",
 });
+
 exports.connection = connection
 
 let data;
