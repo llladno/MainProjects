@@ -14,10 +14,10 @@ app.use(bodyParser.json());
 const _dirname = path.resolve();
 
 const connection = mysql2.createConnection({
-  host: "localhost",
-  user: "root",
+  host: "192.168.0.2",
+  user: "a2",
   database: "sql_website",
-  password: "qwerty12",
+  password: "Qwerty12!",
 });
 exports.connection = connection
 
@@ -166,6 +166,17 @@ app.get(`/api/data/orderDeliv`, (req,res)=>{
     data = { res };
   });
   res.json(data);
+})
+
+app.post("/user/order", (req,res)=>{
+  connection.query(`SELECT * FROM orderdeliv WHERE CustomerId=${+req.body.IdUser}`, (err, res) => {
+    if (err) console.log("err");
+    console.log(res);
+    console.log("Success");
+    data = { res };
+  });
+  console.log("OK")
+  res.send(data)
 })
 
 

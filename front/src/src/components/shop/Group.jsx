@@ -1,6 +1,4 @@
 import React from 'react'
-import candle1 from "./../img/imgshop/1.jpg"
-import candle2 from "./../img/imgshop/2.jpg"
 import axios from 'axios';
 const images = require.context('./../img/imgshop', true);
 const imgs = images.keys()
