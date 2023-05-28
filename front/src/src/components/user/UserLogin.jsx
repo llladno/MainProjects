@@ -51,11 +51,9 @@ const UserLogin = () => {
     return (
         <div>
             <Bar></Bar>
-            <div className="container">
-                <div className="login">
-                </div>
+            <div className="container2">
                 <div className="loginplace">
-                    <div className="styleLogin">
+                    <div className="styleLogin2">
                         <h1 style={{ textAlign: "center" }}>Login</h1>
                         <div>
                             <p>Email/Login</p>
@@ -70,6 +68,8 @@ const UserLogin = () => {
                             <a href="/user/register"><button>Зарегистрироваться</button></a>
                         </div>
                         <a>Забыли пароль?</a>
+                        <div className="login">
+                        </div>
                     </div>
                 </div>
             </div>

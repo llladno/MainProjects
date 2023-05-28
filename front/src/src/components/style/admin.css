@@ -6,7 +6,9 @@ table{
     overflow:hidden;
 }
 
-
+table *{
+    color: #000;
+}
 
 th{
     padding: 5px 50px 5px 50px;
@@ -35,7 +37,7 @@ th:last-child{
     position:fixed;
     width: 10%;
     height: 100%;
-    background: #ACC4CC;
+    background: #735C49;
   }
 
 .btnAdmin{
@@ -45,7 +47,8 @@ th:last-child{
     height: 40px;
 }
 .btnAdmin button{
-    width: 100px;
+    max-width: 70%;
+    width: 150px;
     cursor: pointer;
     border: none;
     height: 40px;

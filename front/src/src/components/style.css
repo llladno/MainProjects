@@ -6,9 +6,10 @@
 
 a{
     text-decoration: none;
-    color: #1A2942;
+    
 }
 body {
+  background: #1B1A1A;
   margin: 0px;
 }
 
@@ -45,5 +46,22 @@ li {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  background: #ACC4CC;
+  color: #DDD8CE;
+  background: #59483F;
+}
+
+.barStyle3 a{
+  color: #DDD8CE;
+}
+
+
+.infoHome{
+  background: #735C49;
+  border-radius: 20px;
+  margin-top: 50px;
+}
+
+.textstyleInfo{
+  margin: 20px 40px 20px 40px;
+  color: #DDD8CE;
 }

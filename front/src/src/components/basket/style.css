@@ -1,0 +1,16 @@
+*{
+    color: #DDD8CE;
+}
+
+.basketcard{
+    background: #735C49;
+    width: 500px;
+    margin-top: 20px;
+    padding: 1px 20px 1px 50px;
+    border-radius: 10px;
+}
+
+.btn{
+    width: 150px;
+    background: #735C49;
+}

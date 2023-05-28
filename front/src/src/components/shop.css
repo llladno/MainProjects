@@ -1,10 +1,54 @@
 .select{
+    position: relative;
     height: 400px;
     background: url(./img/image\ 7.png);
     background-size: cover;
-    filter: brightness(40%);
     display: flex;
     padding: 0px 300px 0px 300px;
     align-items: center;
     justify-content: space-around;
+    z-index: 0;
 }
+
+.unselected{
+    position: relative;
+}
+
+.circle{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 50px;
+    background: #735C49;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle img{
+    width: 60px;
+    max-width: 80px;
+}
+
+.circle:hover{
+    
+    background: #fac79e;
+    cursor: pointer;
+}
+
+.select p{
+    position: relative;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    z-index: 99;
+}
+
+.containershop{
+    margin: 0px 20% 0px 20%;
+    display: flex;
+    justify-content: center;
+}
+
+

@@ -5,7 +5,7 @@ const addProduct = (props) => {
     console.log(props)
     axios({
         method: 'post',
-        url: 'http://localhost:3005/api/addProduct',
+        url: 'http://localhost:3005/api/add/Product',
         data: [{
             title:  props[0],
             descript:  props[1],

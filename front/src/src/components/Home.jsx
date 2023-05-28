@@ -1,21 +1,34 @@
-import React, { Component } from 'react'
+import React, {useEffect, useState} from 'react'
 import Bar from './Bar'
-import "./styleHome.css"
+import "./style/styleHome.css"
 import about from "./img/image 2.png"
 import deliver from "./img/image 3.png"
+import axios from "axios";
 
-export default class Home extends Component {
-  render() {
-    return (
+
+
+
+const Home = () => {
+  const [loading, setLoading] = useState(false)
+  useEffect(()=>{
+    async function re () {
+      const res = await axios.get('http://localhost:3005/error')
+      console.log(res)
+      if(res.data === 'error!'){
+        window.location.href = '/error'
+      }
+      setLoading(true)
+    }
+    re()
+  },[])
+  return (
       <div>
         <Bar />
-        <div>
-        </div>
 
         <div className='conteiner'>
-          <div style={{ background: "#acc4cc57", borderRadius: 40 }}>
+          <div className='infoHome'>
             <div style={{ display: 'flex', justifyContent: "center", alignItems: "center", padding: 25 }}>
-              <div>
+              <div className='textstyleInfo'>
                 <h2>О нас</h2>
                 <p style={{ fontSize: 30 }}>Наши свечи изготовлены из натуральных материалов и не содержат вредных веществ,
                   поэтому вы можете наслаждаться их ярким пламенем и ароматом,
@@ -25,10 +38,10 @@ export default class Home extends Component {
             </div>
           </div>
           <div>
-            <div style={{ background: "#acc4cc57", borderRadius: 40 }}>
+            <div class="infoHome">
               <div style={{ display: 'flex', justifyContent: "center", alignItems: "center", padding: 25 }}>
-              <img src={deliver} style={{ width: 500, height: 400 }}></img>
-                <div>
+                <img src={deliver} style={{ width: 500, height: 400 }}></img>
+                <div className='textstyleInfo'>
                   <h2>Доставка</h2>
                   <p style={{ fontSize: 30 }}>Мы предлагаем нашим клиентам удобный сервис доставки,
                     который позволяет получить заказанные товары в точке выдачи. Мы делаем все возможное,
@@ -45,6 +58,7 @@ export default class Home extends Component {
           </div>
         </div>
       </div>
-    )
-  }
-}
+  )
+};
+
+export default Home;

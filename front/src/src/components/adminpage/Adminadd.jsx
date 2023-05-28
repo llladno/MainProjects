@@ -3,6 +3,8 @@ import Adminhead from './Adminhead';
 import axios from "axios"
 import addUser from './AdminUserAdd';
 import addProduct from './AdminProductAdd';
+import addDelivery from './add/AddDelivery';
+import addOrder from './add/AddOrder';
 
 
 const Adminadd = () => {
@@ -37,6 +39,11 @@ const Adminadd = () => {
             <p>id магазина:</p><input  class='input1'></input>
             <p>id покупателя:</p><input  class='input1'></input>`
         }
+        else if (event.target.value == "order") {
+            elem.innerHTML = `
+            <p>id User:</p><input  class='input1'></input>
+            <p>Id Product:</p><input  class='input1'></input>`
+        }
         elem.innerHTML += "<button id='addbtn'>Отправить</button>"
         
         let addbtn = document.getElementById("addbtn")
@@ -47,7 +54,8 @@ const Adminadd = () => {
             }
             if (eventch == "user") addUser(data)
             else if (eventch == "product") addProduct(data)
-            else if (eventch == "deliv") addProduct(data)
+            else if (eventch == "deliv") addDelivery(data)
+            else if (eventch == "order") addOrder(data)
             data.length = 0
         }
     }
@@ -60,7 +68,10 @@ const Adminadd = () => {
                     <option disabled selected ></option>
                     <option value="user">User</option>
                     <option value="product">Product</option>
-                    <option value="deliv">Shop</option>
+                    <option value="order">Basket</option>
+                    <option value="deliv">Delivery</option>
+                    
+
                 </select>
                 <div id='elem'>
                     <div>Введите информацию о</div>

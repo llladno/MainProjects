@@ -3,6 +3,7 @@ import Adminhead from '../Adminhead';
 import changeUser from './AdminChangeUser';
 import changeDeliv from './AdminChangeDeliv';
 import changeProduct from './AdminChageProduct';
+import changeOrder from './AdminChangeOrder';
 
 
 const AdminChange = () => {
@@ -40,6 +41,11 @@ const AdminChange = () => {
             <p>id магазина:</p><input  class='input1'></input>
             <p>id покупателя:</p><input  class='input1'></input>`
         }
+        else if (event.target.value == "order") {
+            elem.innerHTML = `
+            <p>Id Product</p><input  class='input1'></input>
+            <p>Id User</p><input  class='input1'></input>`
+        }
         elem.innerHTML += "<button id='addbtn'>Отправить</button>"
 
         let addbtn = document.getElementById("addbtn")
@@ -51,6 +57,7 @@ const AdminChange = () => {
             if(eventch == "user") changeUser(data)
             else if(eventch == "product") changeProduct(data)
             else if(eventch == "deliv") changeDeliv(data)
+            else if(eventch == "order") changeOrder(data)
             data.length = 0
         }
     }
@@ -63,7 +70,8 @@ const AdminChange = () => {
                         <option disabled selected ></option>
                         <option value="user">User</option>
                         <option value="product">Product</option>
-                        <option value="deliv">Deliv</option>
+                        <option value="order">Basket</option>
+                        <option value="deliv">Deliv</option> 
                     </select>
                     <div id='elem'>
                         <div>Введите информацию о</div>

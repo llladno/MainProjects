@@ -44,3 +44,18 @@ exports.changeProduct = function(req, res){
     );
     res.send("ok");
 }
+
+
+exports.changeOrder = function(req, res){
+  connection.connection.query(
+    `UPDATE basket SET user_id="${+req.body[0].user_id}" 
+     WHERE product_id = ${+req.body[0].product_id};`,
+    (err, respon) => {
+      if (err) console.log(err);
+      console.log(respon);
+    }
+  );
+  res.send("ok");
+}
+
+

@@ -8,27 +8,44 @@ import base64 from "react-native-base64"
 
 
 
-const CandleShop = () => {
+const CandleShop = (props) => {
     const [products, setProducts] = useState("")
     const [Loading, setLoading] = useState(true)
+    const selected = document.getElementsByClassName("selected")[0]
+    let category = "All"
+    if (selected){
+        if(selected.id == "Vosk") category = "Восковая"
+        else if(selected.id == "Soy") category = "Соевая"
+        else if(selected.id == "Paraf") category = "Парафиновая"
+        else if(selected.id == "ather") category = "Другое"
+    }
+
     useEffect(() => {
         const getProd = async () => {
             const res = await axios.get("http://localhost:3005/api/data/shop/candle")
+            console.log(res.data.res)
             setProducts(res.data.res)
             setLoading(false)
+            if(res.data.res.length == 0) window.location.reload()
         }
         getProd()
     }, [])
-    console.log("Uuu")
+console.log(category)
+console.log(props)
     return (
         <div>
             <div>
             </div>
-            <div className="container">
+            <div className="containershop">
                 <div className="grid-body">
                     {Loading ? <p>Loading...</p>
                         : products.map((x, y) => {
-                            return <div className="grid-item"><Group products={products[y]}></Group></div>
+                            if(category == products[y].category)
+                            { 
+                            return <div className="grid-item"><Group products={products[y]}></Group></div>}
+                            else if(category == "All") {
+                                console.log("yyyy")
+                                return <div className="grid-item"><Group products={products[y]}></Group></div>}
                         })}
                 </div>
             </div>

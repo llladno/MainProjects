@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import Bar from "../Bar";
-import "./RegistStyle.css"
+import "./loginStyle.css"
 import addUser from "../adminpage/AdminUserAdd";
 
 
@@ -34,9 +34,9 @@ const UserRegister = () => {
     return (
         <div>
             <Bar></Bar>
-            <div className="container">
+            <div className="container2">
                 <div className="loginplace">
-                    <div className="styleLogin">
+                    <div className="styleLogin2">
                         <h1 style={{ textAlign: "center" }}>Регистрация</h1>
                         <div style={{ display: "flex" }}>
                             <div>

@@ -14,6 +14,8 @@ import UserRegister from "./components/user/UserRegister";
 import Order from "./components/adminpage/pages/Order";
 import Basket from "./components/basket/Basket";
 import OrderDeliv from "./components/adminpage/pages/OrderDeliv";
+import Stat from "./components/adminpage/statistic/Stat";
+import Error from "./components/Error";
 
 function App() {
 
@@ -30,13 +32,15 @@ function App() {
         <Route path="admin/products" element={<Products></Products>}/>
         <Route path="admin/add" element={<Adminadd></Adminadd>}/>
         <Route path="admin/change" element={<AdminChange></AdminChange>}/>
+        <Route path="admin/order" element={<Order></Order>}/>
+        <Route path="admin/deliv" element={<OrderDeliv></OrderDeliv>}/>
         <Route path="/auth/login" element={<UserLogin></UserLogin>}/>
         <Route path="/user" element={<Userhome></Userhome>}></Route>
         <Route path="shop/candle" element={<Shop/>}/>
         <Route path="/user/register" element={<UserRegister></UserRegister>}/>
-        <Route path="admin/order" element={<Order></Order>}/>
         <Route path="/basket" element={<Basket></Basket>}/>
-        <Route path="admin/deliv" element={<OrderDeliv></OrderDeliv>}/>
+        <Route path="/admin/stat" element={<Stat></Stat>}/>
+        <Route path="/error" element={<Error></Error>}/>
       </Routes>
     </div>
   );

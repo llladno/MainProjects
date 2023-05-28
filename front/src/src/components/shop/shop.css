@@ -14,10 +14,34 @@
     justify-content: center;
 }
 .card{
+    color: #DDD8CE;
     margin: 20px;
-    padding: 20px 30px;
-    border-radius: 20px;
-    background-color: aliceblue;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #59483F;
+}
+button{
+    width: 80%;
+    border-radius: 10px;
+    background: #1B1A1A;
+    border: none;
+    color: #DDD8CE;
+    padding: 8px 30px;
+}
+.imgcard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 230px;
+    border-radius: 10px;
+    background: #735C49;
+}
+.textcard{
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px 0px 10px 0px;
+    background:#735C49;
 }
 img{
     object-fit: cover;

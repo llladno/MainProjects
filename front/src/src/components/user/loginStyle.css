@@ -2,28 +2,43 @@
     margin: 0px 30% 0px 30%;
 }
 .loginplace{
+    margin-top:50px ;
     display: flex;
     justify-content:center;
     align-items: center;
 }
-.styleLogin{
-    background-color: aqua;
+.styleLogin2{
+    background: #59483F;
     padding: 40px 30px 40px 30px;
     border-radius: 20px;
-    box-shadow: 2px 2px 3px #c5c5c5;
+    box-shadow: 2px 2px 2px #86790457;;
+}
+.styleLogin2 input{
+    border: none;
+    height: 25px;
+    border-bottom:1px solid #5050507e;
+    width: 98%;
+    background: #735C49;
+    border-radius: 10px;
 }
 
 .btnStyle{
     margin-top: 30px;
-
 }
 
 .btnStyle button{
     height: 40px;
     margin-bottom: 30px;
-    width: 100%
+    width: 100%;
+    max-width: 102%;
 }
 h1{
     margin: 0px;
     padding: 0px;
+}
+
+.login{
+    color: red;
+    word-wrap: break-word;
+    padding-top: 15px;
 }

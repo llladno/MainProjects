@@ -4,6 +4,7 @@ import order from "./../img/iconAdmin/order.png"
 import change from "./../img/iconAdmin/change.png"
 import plus from "./../img/iconAdmin/plus.png"
 import basket from "./../img/iconAdmin/basket.png"
+import stats from "./../img/iconAdmin/stats.png"
 
 
 const Adminhead = (props) => {
@@ -50,10 +51,16 @@ const Adminhead = (props) => {
                             <button>Change</button>
                     </a>
                 </div>
+                <div className='btnAdmin'>
+                    <a href="/admin/stat">
+                        <img src={stats}></img>
+                        <button>Stat</button>
+                    </a>
+                </div>
             </div>
-            <div>
-                <button onClick={refresh}>refresh</button>
-            </div>
+            {/*<div className='btnAdmin'>*/}
+            {/*    <button onClick={refresh}>refresh</button>*/}
+            {/*</div>*/}
         </div>
     )
 }
