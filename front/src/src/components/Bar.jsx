@@ -9,9 +9,9 @@ const Bar = () => {
         <div className="barStyle3">
             <div className='leftbar'>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href='/shop/candle'>Store</a></li>
-                    <li><a>Address</a></li>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href='/shop/candle'>Магазин</a></li>
+                    <li><a>Адрес</a></li>
                 </ul>
             </div>
             <div className='barStyle2'>

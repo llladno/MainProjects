@@ -38,7 +38,7 @@ function clickFn(event) {
                                 <img src={candleimg}></img>
                             </div>
                         </div>
-                        <p style={{marginBottom:0}}>Свечи</p>
+                        <p style={{marginBottom:0}}>Восковая</p>
                     </div>
                     <div onClick={clickFn} id="Soy" className='unselected' name="candle">
                         <div className='circle'>
@@ -47,17 +47,17 @@ function clickFn(event) {
                             </div>
                         </div>
                         <div className='styleP'>
-                            <p style={{marginBottom:0}}>Свечи</p>
+                            <p style={{marginBottom:0}}>Соевая</p>
                         </div>
                        
                     </div>
                     <div onClick={clickFn} id="Paraf" className='unselected' name="candle">
-                        <div className='circle'>
+                        <div className='circle' style={{display:'flex',justifyContent:'center',marginLeft:12}}>
                             <div>
                                 <img src={paraf}></img>
                             </div>
                         </div>
-                        <p style={{marginBottom:0}}>Свечи</p>
+                        <p style={{marginBottom:0}}>Парафиновая</p>
                     </div>
                     <div onClick={clickFn} id="ather" className='unselected' name="candle">
                         <div className='circle'>
@@ -65,10 +65,9 @@ function clickFn(event) {
                                 <img src={ather}></img>
                             </div>
                         </div>
-                        <p style={{marginBottom:0}}>Свечи</p>
+                        <p style={{marginBottom:0}}>Другое</p>
                     </div>
                 </div>
-                <h1>Shop</h1>
                 <CandleShop state={state}></CandleShop>
             </div>
         )

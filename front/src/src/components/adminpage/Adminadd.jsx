@@ -5,6 +5,7 @@ import addUser from './AdminUserAdd';
 import addProduct from './AdminProductAdd';
 import addDelivery from './add/AddDelivery';
 import addOrder from './add/AddOrder';
+import './styleadd.jsx.css'
 
 
 const Adminadd = () => {

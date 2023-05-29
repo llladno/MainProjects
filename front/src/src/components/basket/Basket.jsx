@@ -18,7 +18,9 @@ const Basket = () => {
             console.log(res.data.res)
             res.data.res.map((elem, index) => {
                 console.log(elem)
-                if (elem.user_id === user) {
+                console.log(elem.user_id)
+                console.log(user)
+                if (elem.user_id === +user) {
                     setData((arr) => [...arr, { product_id: elem.product_id, product: elem.title, descri: elem.descript, price: elem.price }])
                     setAllPrice((arr) => +arr + elem.price)
                     console.log(2)
@@ -26,7 +28,8 @@ const Basket = () => {
                 }
                 else{
                     window.location.reload()
-                }})
+                }
+            })
         }
         collectData()
     }, [])
