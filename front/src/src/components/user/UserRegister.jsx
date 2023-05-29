@@ -19,7 +19,10 @@ const UserRegister = () => {
                 data.push(login.value,name.value,email.value,passwd[0].value)
                 console.log(data)
                 addUser(data)
-                window.location.href = "/auth/login"
+		setTimeout(()=>{
+		window.location.href='/auth/login'
+},800)
+                //window.location.href = "/auth/login"
                 data.length = 0
             }
             else{

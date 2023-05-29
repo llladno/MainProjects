@@ -23,10 +23,10 @@ const CandleShop = (props) => {
     useEffect(() => {
         const getProd = async () => {
             const res = await axios.get("http://localhost:3005/api/data/shop/candle")
-            console.log(res.data.res)
+            if (res.data.res === undefined || res.data.length == 0) window.location.reload()
             setProducts(res.data.res)
-            setLoading(false)
             if(res.data.res.length == 0) window.location.reload()
+	    setLoading(false)
         }
         getProd()
     }, [])

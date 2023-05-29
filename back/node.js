@@ -14,26 +14,16 @@ const {getStat} = require("./login");
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+setTimeout(()=>{
 const connection = mysql2.createConnection({
-    host: "localhost",
+    host: "192.168.0.1",
     // host: "192.168.0.2",
-    user: "a4",
+    user: "a5",
     database: "sql_website",
     // password: "Qwerty12!",
     password: "Qwerty123!",
 })
-let stat
-
-
-connection.connect(err => {
-        if (err) {
-            console.log(err)
-            stat = "error"
-        } else {
-            stat = "noerror"
-        }
-})
-
+let stat = 'noerror'
 
 exports.connection = connection
 
@@ -142,10 +132,12 @@ console.log(stat)
         if(stat === "error"){
             res.send("error!")
         }
-        else {
+        else if(stat === 'noerror'){
             res.send("ok!")
         }
-
     })
+
+
+},5000)
 
 

@@ -17,7 +17,8 @@ const Users = () => {
     },[])
     async function fetchData() {
         const data = await axios.get("http://localhost:3005/api/data/users")
-        setData1(data.data.res)
+	if (data.data.res === undefined) window.location.reload()
+setData1(data.data.res)
         console.log(data1)
         setLoading(true)
     }

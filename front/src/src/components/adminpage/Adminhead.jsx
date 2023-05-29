@@ -36,11 +36,6 @@ const Adminhead = (props) => {
                         <button>Deliv</button></a>
                 </div>
                 <div className='btnAdmin'>
-                    <a href="/admin/users">
-                        <img src={user}></img>
-                        <button>Shop</button></a>
-                </div>
-                <div className='btnAdmin'>
                     <a href="/admin/add">
                         <img src={plus}></img>
                         <button>Add</button></a>

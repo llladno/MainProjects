@@ -1,6 +1,7 @@
 import axios from "axios"
 
 const changeUser = (props) => {
+console.log(props)
     axios({
         method: 'post',
         url: 'http://localhost:3005/api/changeUser',
