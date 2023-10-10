@@ -14,18 +14,42 @@ const {getStat} = require("./login");
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-setTimeout(()=>{
-const connection = mysql2.createConnection({
+const config = {
     host: "192.168.0.1",
     // host: "192.168.0.2",
     user: "a5",
     database: "sql_website",
     // password: "Qwerty12!",
     password: "Qwerty123!",
+}
+setTimeout(()=>{
+function recon (){
+const connection = mysql2.createConnection(config)
+connection.connect((err)=>{
+
+if(err){
+app.get('/error', (req,res)=>{
+console.log('su1')
+res.send('notok')
 })
+console.log('err')
+	setTimeout(()=>{
+recon()}, 100)
+    }
+else{
+app.get('/noerror', (req,res)=>{
+console.log('su')
+res.send('OK!')
+})
+}
+exports.connection = connection
+})
+}
+recon()
+ 
 let stat = 'noerror'
 
-exports.connection = connection
+
 
 let data;
 
@@ -128,16 +152,8 @@ console.log(stat)
     app.post(`/api/change/product`, change.changeProduct);
 
     app.post(`/api/change/deliv`, change.changeDeliv);
-    app.get('/error', (req,res)=>{
-        if(stat === "error"){
-            res.send("error!")
-        }
-        else if(stat === 'noerror'){
-            res.send("ok!")
-        }
-    })
 
 
-},5000)
+},1000)
 
 
