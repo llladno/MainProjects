@@ -10,17 +10,19 @@ const change = require("./change");
 const add = require("./add");
 const {getUser, getProductShop, getProduct, getOrder, getDelivery} = require("./getdata");
 const {getStat} = require("./login");
+const { log } = require("console");
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 const connection = mysql2.createConnection({
-    host: "localhost",
+    host: "0.0.0.0",
     // host: "192.168.0.2",
-    user: "a4",
+    user: "root",
+    port: "3310",
     database: "sql_website",
     // password: "Qwerty12!",
-    password: "Qwerty123!",
+    password: "root",
 })
 let stat
 
@@ -28,9 +30,11 @@ let stat
 connection.connect(err => {
         if (err) {
             console.log(err)
+            console.log('ERROR')
             stat = "error"
         } else {
             stat = "noerror"
+            console.log('no error')
         }
 })
 
