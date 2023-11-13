@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  web-server:
+    image: llladno/candlesfront
+    restart: always
+    ports: 
+    - "3000:3000"
+    depends_on:
+    - db
+    - back
+  db:
+    image: llladno/candlesbd
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "sql_website"
+    ports:
+    - "3306:3306"
+    volumes:
+    - mysql-data:/var/lib/mysql
+  back:
+    image: llladno/candlesback
+    restart: always
+    depends_on:
+    - db
+    ports:
+    - "3005:3005"
+volumes:
+  mysql-data:

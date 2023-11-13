@@ -15,12 +15,12 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 const config = {
-    host: "192.168.0.1",
-    // host: "192.168.0.2",
-    user: "a5",
+    host: "0.0.0.0",
+    // host: "192.168.0.1a5",
+    user: "root",
     database: "sql_website",
     // password: "Qwerty12!",
-    password: "Qwerty123!",
+    password: "root",
 }
 setTimeout(()=>{
 function recon (){
