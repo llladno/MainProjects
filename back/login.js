@@ -19,9 +19,11 @@ exports.createUser = function (req, res) {
 exports.login = (req, res) => {
   let ok = "notok";
   let user
+  console.log(req.body)
   connection.connection.query("SELECT * FROM user", (err, respon) => {
     if (err) console.log("err");
     data = { respon };
+    console.log(data)
     for (let b = 0; b < data.respon.length; b++) {
       if (
         (req.body[0].email == data.respon[b].email ||

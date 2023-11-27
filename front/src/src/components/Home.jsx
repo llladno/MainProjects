@@ -9,21 +9,35 @@ import axios from "axios";
 
 
 const Home = () => {
+console.log('su')
   const [loading, setLoading] = useState(false)
-  useEffect(()=>{
-    async function re () {
-      const res = await axios.get('http://localhost:3005/error')
-      console.log(res)
-      if(res.data === 'error!'){
-        window.location.href = '/error'
-      }
-      setLoading(true)
-    }
-    re()
-  },[])
+//     async function re () {
+// console.log('su')
+
+// let resp = ''
+//       await axios.get('http://0.0.0.0:3005/error').then(res => resp = res.data)
+// .catch((err)=>{
+// console.log(err)})
+// console.log('su')
+
+// 	await axios.get('http://0.0.0.0:3005/noerror').then(res => resp = res.data)
+// 	.catch((err)=>{
+// 	console.log(err)})
+// console.log(resp)
+//       if(resp == 'notok'){
+// 	setTimeout(()=>{
+// 	re()},2500)
+// 	console.log('re')
+	
+//       } 
+// else if (resp == 'OK!'){
+// setLoading(true)}
+//     }
+//     re()
   return (
       <div>
-        <Bar />
+<div>
+<Bar />
 
         <div className='conteiner'>
           <div className='infoHome'>
@@ -57,6 +71,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+</div>
       </div>
   )
 };

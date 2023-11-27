@@ -11,12 +11,12 @@ const Bar = () => {
                 <ul>
                     <li><a href="/">Главная</a></li>
                     <li><a href='/shop/candle'>Магазин</a></li>
-                    <li><a>Адрес</a></li>
+                    
                 </ul>
             </div>
             <div className='barStyle2'>
                 <div className="logoBar">
-                    <div style={{ display: 'flex', justifyContent: "center" }}>LOGO</div>
+                    <div style={{ display: 'flex', justifyContent: "center" }}><a href='/'>LOGO</a></div>
                 </div>
             </div>
             <div style={{ display: "flex", alignItems:"center"}}>

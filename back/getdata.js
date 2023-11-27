@@ -8,14 +8,15 @@ exports.getUser = (req, res) => {
     res.json(data);
 }
 
-exports.getProductShop = (req, res) => {
-    connection.connection.query("SELECT * FROM product", (err, res) => {
+exports.getProductShop = (req, resp) => {
+     
+     connection.connection.query("SELECT * FROM product", (err, res) => {
       if (err) console.log("err");
       console.log(res);
       console.log("Success");
       data = { res };
     });
-    res.json(data);
+    resp.json(data);
   }
 
 exports.getProduct = (req, res) => {

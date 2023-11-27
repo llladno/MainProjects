@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import Bar from "./components/Bar";
 import {Routes, Route} from "react-router-dom"
 import Home from "./components/Home";
@@ -16,14 +16,38 @@ import Basket from "./components/basket/Basket";
 import OrderDeliv from "./components/adminpage/pages/OrderDeliv";
 import Stat from "./components/adminpage/statistic/Stat";
 import Error from "./components/Error";
+import axios from "axios";
 
 function App() {
 
-  
+  const [loading, setLoading] = useState(false)
+//     async function re () {
+// console.log('su')
+
+// let resp = ''
+//       await axios.get('http://0.0.0.0:3005/error').then(res => resp = res.data)
+// .catch((err)=>{
+// console.log(err)})
+// console.log('su')
+
+// 	await axios.get('http://0.0.0.0:3005/noerror').then(res => resp = res.data)
+// 	.catch((err)=>{
+// 	console.log(err)})
+// console.log(resp)
+//       if(resp == 'notok'){
+// 	setTimeout(()=>{
+// 	re()},2500)
+// 	console.log('re')
+	
+//       } 
+// else if (resp == 'OK!'){
+// setLoading(true)}
+//     }
+//     re()
 
   return (
     <div className="App">
-      <Routes>
+<Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="bar" element={<Bar/>}/>
         <Route path="shop/candle" element={<Shop/>}/>
